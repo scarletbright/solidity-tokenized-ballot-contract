@@ -14,6 +14,7 @@ contract TokenizedBallot {
     IMyToken public tokenContract;
     Proposal[] public proposals;
     uint256 public targetBlockNumber;
+    mapping(address => uint256) votingPowerSpent;
 
     constructor(
         bytes32[] memory _proposalNames,
@@ -37,11 +38,19 @@ contract TokenizedBallot {
             "TokenizedBallot: trying to vote more than allowed"
         );
         proposals[proposal].voteCount += amount;
+        votingPowerSpent[msg.sender] += amount;
     }
 
     function votingPower(address account) public view returns (uint256) {
-        return tokenContract.getPastVotes(account, targetBlockNumber);
-        // check if this is enough for protecting the contract
+        return
+            tokenContract.getPastVotes(account, targetBlockNumber) -
+            votingPowerSpent[account];
+    }
+
+    function getRemeiningVotingPower(
+        address account
+    ) public view returns (uint256) {
+        return votingPowerSpent[account];
     }
 
     function winningProposal() public view returns (uint winningProposal_) {
