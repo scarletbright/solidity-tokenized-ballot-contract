@@ -57,6 +57,22 @@ async function main() {
     const proposal = await ballotContract.proposals(i);
     console.log(ethers.decodeBytes32String(proposal.name));
   }
+
+  const voteTx = await ballotContract
+    .connect(acc1)
+    .vote(1, ethers.parseUnits('1'));
+  voteTx.wait();
+
+  // const votesLeftAfterVote = await contract.getVotes(acc1.address);
+
+  // console.log(`Acc 1 has ${votesLeftAfterVote} votes left`);
+  const votingPowerSpent = await ballotContract.getRemeiningVotingPower(acc1);
+  console.log(votingPowerSpent.toString());
+
+  const voteTx2 = await ballotContract
+    .connect(acc1)
+    .vote(1, ethers.parseUnits('1'));
+  voteTx2.wait();
 }
 
 main().catch((err) => {
