@@ -47,7 +47,7 @@ contract TokenizedBallot {
             votingPowerSpent[account];
     }
 
-    function getRemeiningVotingPower(
+    function getRemainingVotingPower(
         address account
     ) public view returns (uint256) {
         return votingPowerSpent[account];

@@ -66,7 +66,7 @@ async function main() {
   // const votesLeftAfterVote = await contract.getVotes(acc1.address);
 
   // console.log(`Acc 1 has ${votesLeftAfterVote} votes left`);
-  const votingPowerSpent = await ballotContract.getRemeiningVotingPower(acc1);
+  const votingPowerSpent = await ballotContract.getRemainingVotingPower(acc1);
   console.log(votingPowerSpent.toString());
 
   const voteTx2 = await ballotContract
