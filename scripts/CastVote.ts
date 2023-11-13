@@ -42,7 +42,7 @@ async function main() {
     );
     await voteTx.wait();
 
-    const discordUsername = walletMapping[wallet.address];
+    const discordUsername = walletMapping[wallet.address.toString()];
     if (discordUsername) {
       console.log(
         `${discordUsername} voted ${ethers.parseUnits(
