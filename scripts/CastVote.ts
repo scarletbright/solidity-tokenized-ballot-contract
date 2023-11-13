@@ -5,12 +5,12 @@ dotenv.config();
 
 // Mapping of wallet addresses to Discord usernames
 const walletMapping: { [address: string]: string } = {
-  '0xBAF5cdEAD710e3347Dc3862E38a4044EAc50A036': '@falko6544',
-  '0x49F719613Da44fb4EDF69c3f8544C1a4fe75ceE4': '@bladesofchaos23',
-  '0xefb02f2ae2f725e1f53878258ab3b121feafe8f3': '@outerspace_staking',
-  '0xBFfCe813B6c14D8659057dD3111D3F83CEE271b8': '@anjaysahoo',
-  '0xfDC252985c13cA04865cf1546b66Df4FA33EC42a': '@deca12x',
-  '0xbc6a681f7ebf7a9ad9b564e4ff81148cbde6b243': '@Davoelgofara',
+  "0xBAF5cdEAD710e3347Dc3862E38a4044EAc50A036": "@falko6544",
+  "0x49F719613Da44fb4EDF69c3f8544C1a4fe75ceE4": "@bladesofchaos23",
+  "0xEfB02F2ae2f725E1f53878258Ab3B121FEAFe8f3": "@outerspace_staking",
+  "0xBFfCe813B6c14D8659057dD3111D3F83CEE271b8": "@anjaysahoo",
+  "0xfDC252985c13cA04865cf1546b66Df4FA33EC42a": "@deca12x",
+  "0xbc6a681f7ebf7a9ad9b564e4ff81148cbde6b243": "@Davoelgofara",
 };
 
 async function main() {
